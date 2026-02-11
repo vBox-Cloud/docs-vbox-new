@@ -1,0 +1,35 @@
+---
+description: Rules for updating vBox documentation in this Starlight project
+globs: src/content/docs/**/*.md, src/content/docs/**/*.mdx
+---
+
+# vBox Documentation Update Rules
+
+When updating documentation files in this Starlight project:
+
+## Format
+- Use standard Markdown (.md) for most pages. Use MDX (.mdx) only when Starlight components (Card, CardGrid, etc.) are needed.
+- Always include frontmatter with `title` and `description` fields.
+- Use `sidebar.order` in frontmatter to control page ordering within each section.
+
+## Content
+- Preserve existing screenshots unless explicitly told to replace them.
+- Image placeholders use the format: `<!-- TODO: Add screenshot of [description] -->`
+- When adding new screenshots, place them in `src/assets/images/[section]/` and reference with relative imports.
+- Use Starlight admonitions: `:::note`, `:::tip`, `:::caution`, `:::danger` for callouts.
+
+## Style
+- Match the existing writing style: professional, concise, second-person ("you can...").
+- Use tables for structured data comparisons.
+- Include "Features" or "Key Capabilities" sections in overview pages.
+- Link to related pages using absolute paths (e.g., `/integrations/defender-xdr/`).
+
+## Cross-References
+- Internal links use the format: `[Page Title](/section/page-slug/)`
+- The site structure follows: getting-started, cost-management, security, operations, tasks, analytics, integrations, administration
+
+## When updating for a new feature
+1. Determine which section the feature belongs to
+2. Create or update the relevant .md file
+3. Update the section overview page if adding a new page
+4. Update `astro.config.mjs` sidebar config if adding a new page that isn't auto-generated
