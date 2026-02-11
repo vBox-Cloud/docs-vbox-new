@@ -12,23 +12,53 @@ This page provides an overview of the vBox portal layout and navigation structur
 The vBox portal uses a sidebar navigation with the following main sections:
 
 ### Dashboard
-The main dashboard provides an at-a-glance view of your Azure environment, including cost trends, security score, and operational health widgets.
+
+The Dashboard provides two viewing options accessible via a tab switcher:
+
+#### Dashboard (Metabase BI)
+- **Primary Dashboard** — Embedded Metabase BI dashboard (requires `BI_ANALYTICS` feature enabled)
+- **Dashboard Type** — `main` dashboard type
+- Provides comprehensive analytics and visualizations across all modules
+
+#### Dashboard (Deprecated)
+- **Legacy Widget-Based Dashboard** — Grid-based layout with conditional widgets
+- **Layout** — 6-column grid system
+- **Widgets**:
+  - **Cost Widgets**:
+    - Cost Details Widget (4 columns)
+    - Savings Potential Trends Widget with tabs (4 columns)
+    - Cost and Savings Widget (4 columns)
+    - Links Widget - Cost (2 columns)
+  - **Security Widgets**:
+    - Security Score Trends Widget showing 30-day trends (4 columns)
+    - Links Widget - Security (2 columns)
+  - **Operations Widgets**:
+    - Observability Score Widget (4 columns)
+    - Links Widget - Operations (2 columns)
+
+:::note
+The Metabase BI dashboard is the primary dashboard when `BI_ANALYTICS` is enabled. The legacy widget-based dashboard is available via the "Dashboard (deprecated)" tab.
+:::
 
 ### Cost
-- **Summary** — Cost overview with embedded BI dashboards
+- **Summary** — Cost overview with embedded Metabase BI dashboards
 - **Recommendations** — Cost optimization recommendations with savings forecasts
 - **Details** — Detailed cost breakdowns and analytics
-- **Assessments** — Cost assessment management (MSP users)
+- **Assessments** — Cost assessment management (MSP users only)
 
 ### Security
-- **Summary** — Security overview with embedded BI dashboards
+- **Summary** — Security overview with embedded Metabase BI dashboards
 - **Recommendations** — Security recommendations with profiles and compliance controls
-- **Assessments** — Security assessment management (MSP users)
+- **Assessments** — Security assessment management (MSP users only)
 
 ### Operations
-- **Summary** — Operations overview (requires BI Analytics)
-- **Recommendations** — Operations recommendations with KPIs
-- **Assessments** — Operations assessment management (MSP users)
+- **Summary** — Operations overview with embedded Metabase BI dashboards (requires `BI_ANALYTICS` feature, route: `/operations/summary`)
+- **Recommendations** — Operations recommendations with 4 KPIs, filters, grouping, and actions (default route: `/operations/recommendations`)
+- **Assessments** — Operations assessment management with AzGovViz import capabilities (MSP users only, route: `/operations/assessments`)
+
+:::tip
+The Operations Summary page redirects to Recommendations when `BI_ANALYTICS` is not enabled.
+:::
 
 ### Tasks
 Task management and tracking for cloud improvement work items.
