@@ -44,17 +44,17 @@ The Metabase BI dashboard is the primary dashboard when `BI_ANALYTICS` is enable
 - **Summary** — Cost overview with embedded Metabase BI dashboards
 - **Recommendations** — Cost optimization recommendations with savings forecasts
 - **Details** — Detailed cost breakdowns and analytics
-- **Assessments** — Cost assessment management (Contributors and System Administrators only)
+- **Assessments** — Cost assessment management (Contributors only)
 
 ### Security
 - **Summary** — Security overview with embedded Metabase BI dashboards
 - **Recommendations** — Security recommendations with profiles and compliance controls
-- **Assessments** — Security assessment management (Contributors and System Administrators only)
+- **Assessments** — Security assessment management (Contributors only)
 
 ### Operations
 - **Summary** — Operations overview with embedded Metabase BI dashboards (requires `BI_ANALYTICS` feature, route: `/operations/summary`)
 - **Recommendations** — Operations recommendations with 4 KPIs, filters, grouping, and actions (default route: `/operations/recommendations`)
-- **Assessments** — Operations assessment management with AzGovViz import capabilities (Contributors and System Administrators only, route: `/operations/assessments`)
+- **Assessments** — Operations assessment management with AzGovViz import capabilities (Contributors only, route: `/operations/assessments`)
 
 :::tip
 The Operations Summary page redirects to Recommendations when `BI_ANALYTICS` is not enabled.
@@ -65,12 +65,11 @@ Task management and tracking for cloud improvement work items.
 
 ## User Roles and Access
 
-vBox uses a workspace-based RBAC system with four roles. Your effective permissions are determined per workspace or customer:
+vBox uses a workspace-based RBAC system with three roles. Your effective permissions are determined per workspace or customer:
 
 - **Organization Reader** — Read-only access to assigned organization dashboards and recommendations
 - **Organization Contributor (MSP)** — Full operational access including assessments, customer management, and workspace navigation
 - **Organization Owner (Account Manager)** — Customer relationship management and user management
-- **System Administrator** — Unrestricted access to all features and configuration
 
 :::note
 Some menu items may not be visible depending on your role and the features enabled for your organization. See [Users and Roles](/administration/users-and-roles/) for full details.

@@ -142,7 +142,7 @@ Add or remove MSP users assigned to manage this organization.
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| **Email** | Yes | User's email address (autocomplete available for System Administrators) |
+| **Email** | Yes | User's email address |
 | **First Name** | Yes | User's first name |
 | **Last Name** | Yes | User's last name |
 

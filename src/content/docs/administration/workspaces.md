@@ -1,12 +1,12 @@
 ---
 title: Workspaces
-description: Workspace management for MSP and system administrator users.
+description: Workspace management for MSP users.
 sidebar:
   order: 1
 ---
 
-:::note[Contributor / SA Feature]
-Workspace management is available only for Organization Contributors (MSP) and System Administrators.
+:::note[Contributor Feature]
+Workspace management is available only for Organization Contributors (MSP).
 :::
 
 Workspaces in vBox allow Organization Contributors to organize and manage multiple customer environments from a single pane of glass. Workspaces provide logical grouping of customer organizations and help streamline administration across different business units or service tiers.
@@ -17,14 +17,14 @@ Workspace management routes are protected by role-based access control:
 
 | Route | Access Level | Description |
 |-------|-------------|-------------|
-| `/workspaces` | Organization Contributor, System Administrator | View all workspaces |
-| `/workspaces/add` | System Administrator only | Create new workspace |
-| `/workspaces/:id` | Organization Contributor, System Administrator | View workspace details |
-| `/workspaces/:id/edit` | System Administrator only | Edit workspace settings |
-| `/workspaces/:id/organizations` | Organization Contributor, System Administrator | Manage organizations within workspace |
+| `/workspaces` | Organization Contributor | View all workspaces |
+| `/workspaces/add` | Organization Contributor | Create new workspace |
+| `/workspaces/:id` | Organization Contributor | View workspace details |
+| `/workspaces/:id/edit` | Organization Contributor | Edit workspace settings |
+| `/workspaces/:id/organizations` | Organization Contributor | Manage organizations within workspace |
 
 :::caution[Permission Required]
-Only System Administrators can create and edit workspaces. Organization Contributors can view workspaces and manage organizations within them, but cannot modify workspace settings.
+Only Organization Contributors can create, edit, and manage workspaces.
 :::
 
 ## Workspace Navigation
@@ -35,7 +35,7 @@ Workspaces are displayed in the sidebar menu, allowing quick navigation between 
 
 ## Creating a Workspace
 
-System Administrators can create new workspaces through the `/workspaces/add` route. The workspace creation form includes:
+Organization Contributors can create new workspaces through the `/workspaces/add` route. The workspace creation form includes:
 
 ### Required Fields
 
@@ -55,7 +55,7 @@ Use descriptive names that clearly indicate the workspace purpose, such as "Ente
 
 ## Editing Workspaces
 
-System Administrators can modify workspace settings through the `/workspaces/:id/edit` route. The edit form uses the same fields as the creation form, allowing you to update the workspace name and description.
+Organization Contributors can modify workspace settings through the `/workspaces/:id/edit` route. The edit form uses the same fields as the creation form, allowing you to update the workspace name and description.
 
 :::note
 Workspace edits affect all users with access to that workspace. Changes are reflected immediately in the sidebar navigation.
@@ -69,7 +69,7 @@ Each workspace can contain multiple customer organizations. Navigate to `/worksp
 
 ## Global Settings
 
-Organization Contributors and System Administrators can access the Global Settings dialog from the application header. It includes two sections:
+Organization Contributors can access the Global Settings dialog from the application header. It includes two sections:
 
 ### Azure Authorization
 
@@ -94,4 +94,4 @@ Use Global Settings to create a personalized administrative view that focuses on
 1. **Logical Grouping** — Organize workspaces by customer tier, geographic region, or service level
 2. **Clear Naming** — Use descriptive names that indicate workspace purpose
 3. **Documentation** — Use the description field to document workspace purpose and any special considerations
-4. **Access Management** — Ensure only authorized Organization Contributors and System Administrators have access to sensitive workspaces
+4. **Access Management** — Ensure only authorized Organization Contributors have access to sensitive workspaces

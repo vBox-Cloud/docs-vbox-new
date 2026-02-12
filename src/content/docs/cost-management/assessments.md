@@ -6,7 +6,7 @@ sidebar:
 ---
 
 :::note[MSP Feature]
-Cost Assessments are available only for Organization Contributors (MSP) and System Administrators.
+Cost Assessments are available only for Organization Contributors (MSP).
 :::
 
 The **Cost Assessments** page allows MSP users to create and manage cost assessments for their customers, providing structured evaluation and reporting of cost optimization opportunities. Assessments enable MSPs to deliver comprehensive cost analysis reports to their clients.

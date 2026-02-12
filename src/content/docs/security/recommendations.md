@@ -137,7 +137,7 @@ Clicking on a recommendation name opens a detailed profile page with the followi
 - Back button to return to recommendations list
 
 ### Properties Card
-- Editable properties (MSP and Security Admin roles only)
+- Editable properties (MSP only)
 - Key recommendation metadata
 
 ### Description
@@ -175,7 +175,7 @@ For each resource, the grid displays:
 ### Profile Actions
 Available actions from the recommendation profile:
 
-- **Edit Properties** - Modify recommendation properties (MSP/SA only)
+- **Edit Properties** - Modify recommendation properties (MSP only)
 - **Create Task** - Create a new remediation task
 - **Mute/Unmute Resources** - Mute or restore specific resources
 - **Share** - Share the recommendation profile

@@ -6,7 +6,7 @@ sidebar:
 ---
 
 :::note[MSP Feature]
-Security Assessments are available only for Organization Contributors (MSP) and System Administrators.
+Security Assessments are available only for Organization Contributors (MSP).
 :::
 
 The Security Assessments page allows Organization Contributors to create and manage security assessments for their customers, providing structured evaluation and reporting of security posture improvements.
