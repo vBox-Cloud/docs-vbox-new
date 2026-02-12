@@ -14,23 +14,15 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 ## Explore vBox Features
 
 <CardGrid>
-	<Card title="Cost Management" icon="seti:money">
-		Identify Azure waste, highlight savings recommendations, and bring clarity to cloud spend with detailed cost analysis and baseline comparisons.
-	</Card>
-	<Card title="Security" icon="seti:lock">
-		Surface security exposures and align remediation actions with best practices using Secure Score and vulnerability management powered by Microsoft Defender for Cloud.
-	</Card>
-	<Card title="Operations" icon="seti:config">
-		Improve reliability, performance, and governance across your Azure environment with Observability Score and operational best-practice recommendations.
-	</Card>
-	<Card title="Analytics" icon="seti:graphql">
-		Leverage BI Analytics dashboards powered by Metabase for executive reporting, trend analysis, and data-driven decision making.
-	</Card>
+	<LinkCard title="Cost Management" href="/cost-management/overview/" description="Identify Azure waste, highlight savings recommendations, and bring clarity to cloud spend with detailed cost analysis and baseline comparisons." />
+	<LinkCard title="Security" href="/security/overview/" description="Surface security exposures and align remediation actions with best practices using Secure Score and vulnerability management powered by Microsoft Defender for Cloud." />
+	<LinkCard title="Operations" href="/operations/overview/" description="Improve reliability, performance, and governance across your Azure environment with Observability Score and operational best-practice recommendations." />
+	<LinkCard title="Analytics" href="/analytics/bi-analytics/" description="Leverage BI Analytics dashboards powered by Metabase for executive reporting, trend analysis, and data-driven decision making." />
 </CardGrid>
 
 ## Quick Links
