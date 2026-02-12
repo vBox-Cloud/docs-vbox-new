@@ -6,10 +6,10 @@ sidebar:
 ---
 
 :::note[MSP Feature]
-Operations Assessments are available only for MSP (Managed Service Provider) users.
+Operations Assessments are available only for Organization Contributors (MSP) and System Administrators.
 :::
 
-The Operations Assessments page allows MSP users to create and manage operations assessments for their customers, providing structured evaluation and reporting of operational excellence improvements.
+The Operations Assessments page allows Organization Contributors to create and manage operations assessments for their customers, providing structured evaluation and reporting of operational excellence improvements.
 
 ## Assessment Types
 

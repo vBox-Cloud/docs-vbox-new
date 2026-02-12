@@ -1,26 +1,30 @@
 ---
 title: Users and Roles
-description: Understanding user roles and permissions in vBox.
+description: Understanding the workspace-based RBAC permission system, user roles, and authentication in vBox.
 sidebar:
   order: 3
 ---
 
-vBox supports different user roles with varying access levels to features and data. The role-based access control (RBAC) system ensures that users only have access to the features and data appropriate for their responsibilities.
+vBox uses a **workspace-based RBAC (Role-Based Access Control)** system where permissions are determined dynamically per workspace or customer organization. This means a user's effective role can vary depending on which resource they are accessing.
 
 ## User Roles
 
-vBox defines four primary user roles, each with specific permissions and access levels:
+vBox defines four primary roles. Roles are derived from permission strings assigned at the workspace or customer level:
 
-| Role | Description | Key Permissions |
-|------|-------------|-----------------|
-| **Regular User** | Standard access to dashboards and recommendations | View dashboards, recommendations, cost details; create tasks; view assigned organizations |
-| **MSP** | Managed Service Provider with full access | All regular user permissions plus assessments, workspace management, customer management, organization configuration |
-| **Account Manager** | Customer relationship management | Customer management, user management, view customer dashboards and reports |
-| **System Administrator** | Full administrative access | All MSP permissions plus system-level configuration, workspace creation/editing, global settings |
+| Role | Internal Permission | Description |
+|------|---------------------|-------------|
+| **Organization Reader** | *(default — no elevated permission)* | Read-only access to assigned organization dashboards and recommendations |
+| **Organization Contributor** (MSP) | `Temp.OrganizationContributor` | Full operational access — assessments, customer management, workspace navigation |
+| **Organization Owner** (Account Manager) | `Temp.OrganizationOwner` | Customer relationship management — organization settings, user management, reports |
+| **System Administrator** | *(set on user profile)* | Unrestricted access — bypasses all permission checks, workspace creation/editing |
 
-### Regular User
+:::note[Dynamic Permissions]
+Permissions are fetched per resource (customer or workspace) and cached. When you switch between customers or workspaces, your effective permissions are re-evaluated automatically.
+:::
 
-Regular users have the most restricted access level, designed for end customers who need to view their organization's data and recommendations.
+### Organization Reader
+
+Organization Readers have the most restricted access level, designed for end customers who need to view their organization's data.
 
 **Capabilities:**
 - View dashboards for assigned organizations
@@ -33,150 +37,223 @@ Regular users have the most restricted access level, designed for end customers 
 - Cannot access workspace management
 - Cannot modify organization settings
 - Cannot manage users
-- Cannot access system administration features
+- Cannot create or manage assessments
+- Can only access organizations they are explicitly assigned to
 
-### MSP (Managed Service Provider)
+### Organization Contributor (MSP)
 
-MSP users have comprehensive access to manage multiple customer organizations and workspaces.
+Organization Contributors are MSP (Managed Service Provider) users with comprehensive access to manage multiple customer organizations.
 
 **Capabilities:**
-- All Regular User capabilities
-- Create and manage assessments
-- View and manage workspaces (read-only for workspace settings)
+- All Organization Reader capabilities
+- Create and manage assessments (Cost, Security, Operations)
+- View and navigate workspaces
 - Create and manage customer organizations
 - Configure organization settings through the customer wizard
 - Access all customer dashboards and reports
-- Manage organization users (Organization Readers, MSP Engineers, Account Managers)
+- Manage organization users (Readers, Contributors, Owners)
 - Configure feature toggles and subscription plans
 - Set up notifications and ITSM integration
+- Import recommendations and questionnaires
+- Edit recommendation properties
+- Access Advanced optimizations tab
 
 **Restrictions:**
 - Cannot create or edit workspaces (System Administrator only)
-- Cannot access system-level global settings (except workspace/organization visibility)
 
 :::tip[MSP Best Practices]
-MSP users should regularly review organization configurations, monitor active tasks, and ensure data collection schedules are appropriate for each customer's needs.
+Organization Contributors should regularly review organization configurations, monitor active tasks, and ensure data collection schedules are appropriate for each customer's needs.
 :::
 
-### Account Manager
+### Organization Owner (Account Manager)
 
-Account Managers focus on customer relationship management and have access to customer-facing features.
+Organization Owners focus on customer relationship management and have elevated access to customer-facing features.
 
 **Capabilities:**
 - View customer organizations and profiles
-- Manage customer information
+- Manage customer information and settings
 - View customer dashboards and reports
 - Manage users within customer organizations
 - Access customer summaries and recommendations
+- Access Advanced optimizations tab
 
 **Restrictions:**
 - Cannot access workspace management
-- Cannot modify technical settings (subscriptions, Run-As accounts, scheduling)
-- Cannot access system administration features
+- Cannot create or manage assessments
+- Cannot modify technical settings (subscriptions, scheduling)
 
 ### System Administrator
 
-System Administrators have full access to all features and system configuration.
+System Administrators have unrestricted access — they bypass all permission checks.
 
 **Capabilities:**
-- All MSP capabilities
+- All Organization Contributor capabilities
 - Create and edit workspaces
 - Modify workspace settings
-- Access global settings dialog
+- Access Global Settings dialog
 - Configure system-wide settings
 - Manage all users and roles
 - Full access to all organizations and workspaces
 
 :::caution[System Administrator Access]
-System Administrator role provides unrestricted access to all features and data. Assign this role only to trusted administrators who require full system access.
+The System Administrator role provides unrestricted access to all features and data. Assign this role only to trusted administrators who require full system access.
+:::
+
+## Inventory Permissions
+
+In addition to role-based access, vBox has granular inventory view permissions that control access to resource-level data:
+
+| Permission | Constant | Controls |
+|------------|----------|----------|
+| **Cost Inventory View** | `OptimizationInventory.View` | Access to cost recommendation resource inventory and export |
+| **Security Inventory View** | `SecurityInventory.View` | Access to security recommendation resource tabs and export |
+| **Operations Inventory View** | `OperationsInventory.View` | Access to operations recommendation resource inventory and export |
+
+:::note
+System Administrators automatically have all inventory permissions. Other users require the specific permission to be included in their workspace permissions.
 :::
 
 ## Route Guards and Access Control
 
-vBox implements route guards to enforce role-based access control throughout the application:
+vBox implements route guards that enforce access control throughout the application. Guards wait for permissions to load before evaluating access, ensuring accurate authorization.
 
 | Route Guard | Protected Routes | Required Role |
 |-------------|------------------|---------------|
-| `canActivateMsp` | MSP-specific features | MSP or System Administrator |
-| `canActivateSa` | System administration features | System Administrator only |
-| `canActivateCustomerRoute` | Customer organization routes | MSP, Account Manager, or System Administrator |
-| `canActivateWorkspaceRoute` | Workspace management routes | MSP or System Administrator |
-| `canActivateChildFeatureFlag` | Feature-specific routes (Cost, Security, Operations) | User with access + feature enabled |
+| `canActivateMsp` | MSP-specific features (assessments, imports) | Organization Contributor or System Administrator |
+| `canActivateSa` | Workspace creation/editing | System Administrator only |
+| `canActivateCustomerRoute` | Customer organization routes | Contributor, Owner, or System Administrator (plus assignment check) |
+| `canActivateWorkspaceRoute` | Workspace management routes | User must have access to the specific workspace |
+| `canActivateChildFeatureFlag` | Feature-specific routes | User with access + feature flag enabled for the organization |
 
-### Route Guard Details
+### How Route Guards Work
 
 **canActivateMsp**
-- Protects routes requiring MSP-level access
-- Allows: MSP users, System Administrators
-- Blocks: Regular Users, Account Managers (unless route also allows Account Manager)
+- Allows: Organization Contributors, System Administrators
+- Blocks: Organization Readers, Organization Owners (unless the route also permits Owners)
+- On denial: Redirects to home with snackbar message
 
 **canActivateSa**
-- Protects system administration routes
 - Allows: System Administrators only
 - Blocks: All other roles
+- On denial: Redirects to home with snackbar message
 
 **canActivateCustomerRoute**
-- Protects customer organization routes (`/organization/:customerId/*`)
-- Allows: MSP users, Account Managers, System Administrators
-- Also checks user assignment to the specific organization
-- Blocks: Regular Users (unless assigned to the organization)
+- Allows: Contributors, Owners, System Administrators
+- Also checks: User assignment to the specific organization
+- For Contributors/Administrators: Checks all accessible customers
+- For Readers: Only checks their explicitly assigned `clientsIds`
+- On denial: Redirects to home with snackbar message
 
 **canActivateWorkspaceRoute**
-- Protects workspace management routes (`/workspaces/*`)
-- Allows: MSP users, System Administrators
-- Blocks: Regular Users, Account Managers
+- Validates: The `workspaceId` exists in the user's accessible workspaces
+- On denial: Redirects to home with snackbar message
 
 **canActivateChildFeatureFlag**
-- Protects feature-specific routes (e.g., `/organization/:customerId/cost`)
-- Requires: User access to the organization AND feature enabled for that organization
-- Checks feature flags: Security, Operations, Cost Details, BI Analytics, Tasks
+- Checks: Feature flag is enabled for the route's organization
+- On denial: Redirects to home
 
 :::note[Access Denied]
-If you receive an "Access Denied" message, verify that:
-1. Your role has the required permissions
-2. You are assigned to the organization (for customer routes)
-3. The feature is enabled for the organization (for feature-specific routes)
+When a route guard blocks access, you will see a snackbar notification: **"No permission to view this content. Redirected."** If this happens:
+1. Verify your role has the required permissions for that resource
+2. Confirm you are assigned to the organization (for customer routes)
+3. Check that the feature is enabled for the organization
 :::
+
+## Unauthorized Page
+
+If you navigate to a resource you do not have permission to access, vBox displays a dedicated **Unauthorized (403)** page with:
+
+- A clear error message explaining the access denial
+- A link to contact support at **support@vbox-cloud.com** (pre-filled with your error details)
+- A **Log out** button to switch accounts if needed
+
+<!-- TODO: Add screenshot of Unauthorized page -->
+
+## OBO Authentication (On-Behalf-Of)
+
+vBox uses Microsoft Entra ID **On-Behalf-Of (OBO)** authentication for actions that require direct access to your Azure resources.
+
+### When OBO Authentication Appears
+
+The OBO authorization modal appears automatically before:
+
+- **Running** a manual assessment
+- **Deploying** an assessment environment
+- **Starting** an assessment
+
+### Authorization Flow
+
+1. A modal appears titled **"vBox Authorization"** explaining that Microsoft Entra ID consent is required
+2. Click the **Authorize** button to open a Microsoft authentication popup
+3. Sign in and grant consent in the popup window
+4. The popup closes and you are returned to vBox with authorization complete
+
+<!-- TODO: Add screenshot of OBO Authorization modal -->
+
+:::tip
+OBO authorization tokens are stored for your session. You typically only need to authorize once per browser session.
+:::
+
+### Authorization Errors
+
+If authorization fails, a snackbar notification will display an error message. Common causes:
+
+- The Microsoft popup was blocked by your browser — allow popups for the vBox domain
+- Your Azure AD account does not have sufficient permissions
+- Network connectivity issues during the authentication flow
+
+### Azure Authorization Status
+
+You can check your OBO authorization status in the **Global Settings** dialog (accessible from the application header for Contributors and Administrators). The Azure Authorization section shows:
+
+- A **checkmark** icon if vBox is authorized to access Azure resources on your behalf
+- A **warning** icon if authorization is needed or has expired
 
 ## User Management
 
 ### Organization-Level User Assignment
 
-Within each customer organization, you can assign users to specific roles:
+Within each customer organization, users are assigned to specific roles through the Customer Configuration Wizard (Step 3):
 
-| Role | Assignment Location | Description |
-|------|---------------------|-------------|
-| **Organization Readers** | Customer Wizard Step 3 | Users with read-only access to organization data |
-| **MSP Engineers** | Customer Wizard Step 3 | MSP users assigned to manage this organization |
-| **Account Manager** | Customer Wizard Step 3 | Primary account manager for the customer |
+| Role | Assignment | Description |
+|------|------------|-------------|
+| **Organization Readers** | Add/remove with Email, First Name, Last Name | Users with read-only access to organization data |
+| **Organization Contributors** | Add/remove with Email, First Name, Last Name (email autocomplete for System Administrators) | MSP users assigned to manage this organization |
+| **Organization Owner** | Select from Organization Contributors | Primary account manager for the customer |
+| **Scheduled Data Collection User** | Select from Organization Contributors | User account used for scheduled data collection runs |
+
+:::caution[Scheduled Data Collection User]
+The Scheduled Data Collection User is required and must be an Organization Contributor. If the selected user is removed from the Contributors list, this field is automatically cleared and must be reassigned.
+:::
 
 ### User Assignment Best Practices
 
 1. **Principle of Least Privilege** — Assign users only the minimum access level required
-2. **Regular Audits** — Periodically review user assignments to ensure they're still appropriate
-3. **Clear Responsibilities** — Document which MSP Engineers are responsible for which organizations
-4. **Account Manager Assignment** — Ensure each customer has a designated Account Manager
+2. **Regular Audits** — Periodically review user assignments to ensure they are still appropriate
+3. **Clear Responsibilities** — Document which Contributors are responsible for which organizations
+4. **Owner Assignment** — Ensure each customer has a designated Organization Owner
+5. **Data Collection User** — Verify the Scheduled Data Collection User has appropriate Azure permissions
 
 ## Role-Based Feature Access
 
-Not all features and pages are visible to all users. The visibility depends on three factors:
+Feature visibility depends on three factors: user role, feature flags, and organization assignment.
 
 ### 1. User Role
 
-The user's role determines which menu items and pages are accessible:
-
-| Feature | Regular User | Account Manager | MSP | System Administrator |
-|---------|--------------|-----------------|-----|---------------------|
-| Dashboards | ✓ (assigned orgs) | ✓ (assigned orgs) | ✓ (all) | ✓ (all) |
-| Recommendations | ✓ (assigned orgs) | ✓ (assigned orgs) | ✓ (all) | ✓ (all) |
-| Tasks | ✓ (assigned orgs) | ✓ (assigned orgs) | ✓ (all) | ✓ (all) |
-| Customer Management | ✗ | ✓ | ✓ | ✓ |
-| Workspace Management | ✗ | ✗ | ✓ (view) | ✓ (full) |
-| System Administration | ✗ | ✗ | ✗ | ✓ |
+| Feature | Organization Reader | Organization Owner | Organization Contributor | System Administrator |
+|---------|--------------------|--------------------|--------------------------|----------------------|
+| Dashboards | Assigned orgs only | Assigned orgs only | All orgs | All orgs |
+| Recommendations | Assigned orgs only | Assigned orgs only | All orgs | All orgs |
+| Tasks | Assigned orgs only | Assigned orgs only | All orgs | All orgs |
+| Customer Management | No | Yes | Yes | Yes |
+| Assessments | No | No | Yes | Yes |
+| Workspace Management | No | No | Yes (view) | Yes (full) |
+| System Administration | No | No | No | Yes |
+| Global Settings | No | No | Yes | Yes |
 
 ### 2. Feature Flags
 
-Features enabled for the customer organization control access to specific feature areas:
+Features enabled for the customer organization control access to specific areas:
 
 | Feature Flag | Routes Affected | Description |
 |--------------|-----------------|-------------|
@@ -187,23 +264,30 @@ Features enabled for the customer organization control access to specific featur
 | **Tasks** | `/organization/:customerId/tasks` | Task management features |
 
 :::tip[Feature Flag Configuration]
-Feature flags are configured in Step 4 of the Customer Configuration Wizard. Enable only the features that are included in the customer's subscription plan.
+Feature flags are configured in Step 4 of the Customer Configuration Wizard. Enable only the features included in the customer's subscription plan.
 :::
 
 ### 3. Organization Assignment
 
-Regular Users can only access organizations to which they are assigned. MSP users and System Administrators have access to all organizations.
+Organization Readers can only access organizations to which they are explicitly assigned. Organization Contributors and System Administrators have access to all organizations within their accessible workspaces.
 
 ## Global Settings
 
-MSP users can configure workspace and organization visibility through the Global Settings dialog accessible from the application header. This feature allows you to:
+Organization Contributors and System Administrators can access the **Global Settings** dialog from the application header. It includes:
 
-- Control which workspaces appear in your navigation
-- Filter organizations within workspaces
-- Create a customized administrative view
+### Azure Authorization
+- Displays the current OBO authorization status (authorized or needs authorization)
+- See [OBO Authentication](#obo-authentication-on-behalf-of) above for details
+
+### Workspaces and Organizations Visibility
+- **Tree-based selector** for choosing which workspaces and organizations appear in your navigation
+- **Search** field with clear button to filter the tree
+- **Toggle Collapse** button to expand/collapse all nodes
+- **Select All** option at the top of the tree
+- At least one workspace or organization must be selected
 
 :::note[Global Settings Access]
-Global Settings for workspace/organization visibility is available to MSP users and System Administrators only.
+The Global Settings dialog is available to Organization Contributors and System Administrators only.
 :::
 
 ## Security Considerations
@@ -211,8 +295,9 @@ Global Settings for workspace/organization visibility is available to MSP users 
 1. **Role Assignment** — Regularly audit user role assignments to ensure they match current responsibilities
 2. **Organization Access** — Verify that users only have access to organizations they should manage
 3. **Feature Flags** — Ensure feature flags match subscription plans to prevent unauthorized access
-4. **Run-As Accounts** — Protect Run-As Account credentials used for data collection
+4. **Scheduled Data Collection User** — Ensure the data collection user has appropriate Azure permissions and is kept up to date
 5. **System Administrator** — Limit System Administrator role assignments to essential personnel
+6. **OBO Authorization** — Review OBO authorization status periodically in Global Settings
 
 :::caution[Security Best Practices]
 - Never share user credentials
@@ -223,13 +308,14 @@ Global Settings for workspace/organization visibility is available to MSP users 
 
 ## Troubleshooting Access Issues
 
-If you're experiencing access issues:
+If you are experiencing access issues:
 
-1. **Verify Role** — Confirm your user role has the required permissions
-2. **Check Assignment** — Ensure you're assigned to the organization (for Regular Users)
+1. **Verify Role** — Confirm your user role has the required permissions for the resource you are trying to access
+2. **Check Assignment** — Ensure you are assigned to the organization (for Organization Readers)
 3. **Feature Flags** — Verify the feature is enabled for the organization
-4. **Route Guard** — Check if a route guard is blocking access
-5. **Contact Administrator** — Reach out to your System Administrator if issues persist
+4. **OBO Authorization** — If running assessments, check that OBO authorization is complete in Global Settings
+5. **Unauthorized Page** — If you see the 403 page, use the support email link to request access
+6. **Contact Administrator** — Reach out to your System Administrator if issues persist
 
 :::note
 Contact your vBox administrator if you need access to features that are not visible in your navigation menu.

@@ -6,10 +6,10 @@ sidebar:
 ---
 
 :::note[MSP Feature]
-Security Assessments are available only for MSP (Managed Service Provider) users.
+Security Assessments are available only for Organization Contributors (MSP) and System Administrators.
 :::
 
-The Security Assessments page allows MSP users to create and manage security assessments for their customers, providing structured evaluation and reporting of security posture improvements.
+The Security Assessments page allows Organization Contributors to create and manage security assessments for their customers, providing structured evaluation and reporting of security posture improvements.
 
 ## Assessments Grid
 

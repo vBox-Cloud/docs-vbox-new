@@ -39,8 +39,8 @@ The organizations grid displays the following columns:
 | **Secure Score: Infra** | Infrastructure security score |
 | **Created On** | Date when the organization was created |
 | **Last Data Collection** | Most recent data collection timestamp (hover tooltip shows separate dates for Cost, Security, and Operations) |
-| **Organization Readers** | Count of users with reader access (hover tooltip shows list of users) |
-| **Active Tasks** | Count of active tasks (hover tooltip shows task details) |
+| **Organization Readers** | Count of users with reader access (click to see a tooltip with full names, emails, individual copy buttons, and a "Copy all emails" button in Outlook format) |
+| **Active Tasks** | Count of active tasks (hover tooltip shows breakdown: Not Started, In Progress, Completed, Cancelled) |
 | **Actions** | Action buttons: Get Summary, View Profile, Edit, Delete |
 | **Tenants** | Azure tenant information (hidden by default, searchable) |
 
@@ -122,17 +122,50 @@ Configure Azure tenant and subscription associations:
 
 ### Step 3: User Management
 
-Assign users and roles for the organization:
+Assign users and roles for the organization. The form has four sections:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| **Organization Readers** | Autocomplete | Users with read-only access to organization data |
-| **MSP Engineers** | Autocomplete | MSP users assigned to manage this organization |
-| **Account Manager** | Autocomplete | Primary account manager for the customer |
-| **Run-As Account** | Required | Service account used for data collection and API access |
+#### Organization Readers
 
-:::caution[Run-As Account]
-The Run-As Account is required and must have appropriate permissions in Azure to collect data. Ensure this account has the necessary roles assigned in Azure AD.
+Add or remove users with read-only access to the organization's data.
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Email** | Yes | User's email address |
+| **First Name** | Yes | User's first name |
+| **Last Name** | Yes | User's last name |
+
+Click **Add Organization Reader** to add more users. Use the remove button next to each user to revoke access.
+
+#### Organization Contributors (MSP Engineers)
+
+Add or remove MSP users assigned to manage this organization.
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Email** | Yes | User's email address (autocomplete available for System Administrators) |
+| **First Name** | Yes | User's first name |
+| **Last Name** | Yes | User's last name |
+
+Click **Add Organization Contributor** to add more users.
+
+#### Organization Owner
+
+Select the primary account manager for this customer from the list of Organization Contributors.
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Organization Owner** | Yes | Dropdown populated from Organization Contributors |
+
+#### Scheduled Data Collection User
+
+Select the user account that will be used for scheduled data collection runs.
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| **Scheduled Data Collection User** | Yes | Dropdown populated from Organization Contributors |
+
+:::caution[Scheduled Data Collection User]
+The Scheduled Data Collection User is required and must be an Organization Contributor. If the selected user is removed from the Contributors list, this field is automatically cleared and must be reassigned. The selected user must have appropriate Azure permissions for data collection.
 :::
 
 ### Step 4: Subscription Plan
@@ -211,10 +244,22 @@ Each customer can have the following features enabled independently:
 | **BI Analytics** | Enables embedded Metabase dashboards on Summary pages | Requires Metabase configuration |
 | **Tasks** | Enables task management for tracking recommendation follow-up | No dependencies |
 
+## Customer Info Page
+
+The customer info page (`/organization/:customerId`) displays a read-only overview of the organization, including:
+
+- **Organization Profile** — Name, status, description, and logo
+- **Subscription Plan** — Plan type and enabled features
+- **Tenants and Subscriptions** — Azure tenant and subscription tree
+- **Users** — Organization Readers, Organization Contributors, Organization Owner, and Scheduled Data Collection User
+- **Email Integration** — Notification settings (if configured)
+
+<!-- TODO: Add screenshot of Customer Info page -->
+
 ## Best Practices
 
 1. **Complete Wizard Setup** — Ensure all wizard steps are completed for proper organization configuration
-2. **Verify Run-As Account** — Test Run-As Account permissions before enabling data collection
+2. **Verify Data Collection User** — Ensure the Scheduled Data Collection User has appropriate Azure permissions before enabling data collection
 3. **Configure Schedules** — Set appropriate collection schedules to balance data freshness with API rate limits
 4. **Enable Features Gradually** — Start with core features and add advanced features as needed
 5. **Document Custom Links** — Use custom links to provide quick access to customer-specific resources

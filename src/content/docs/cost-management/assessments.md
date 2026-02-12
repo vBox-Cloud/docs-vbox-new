@@ -6,7 +6,7 @@ sidebar:
 ---
 
 :::note[MSP Feature]
-Cost Assessments are available only for MSP (Managed Service Provider) users.
+Cost Assessments are available only for Organization Contributors (MSP) and System Administrators.
 :::
 
 The **Cost Assessments** page allows MSP users to create and manage cost assessments for their customers, providing structured evaluation and reporting of cost optimization opportunities. Assessments enable MSPs to deliver comprehensive cost analysis reports to their clients.
@@ -26,7 +26,7 @@ The main grid displays all cost assessments with the following columns:
 | **Status** | Current status of the assessment (e.g., Running, Completed, Paused) |
 | **Results** | Download link for assessment results |
 | **Action** | Quick actions available for the assessment |
-| **Deployed By** | User who created or deployed the assessment |
+| **Deployed By** | User who deployed the assessment (hover tooltip shows deployer name, email address, and deployment timestamp in "MMM d, y, h:mm a" format) |
 
 ### Auto-Refresh
 
