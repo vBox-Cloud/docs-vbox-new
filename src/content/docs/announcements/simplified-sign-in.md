@@ -1,6 +1,6 @@
 ---
-title: "Simplified Sign-In & Improved Security Permissions"
-description: A more secure, streamlined way to access vBox — with only the permissions you need.
+title: "Simplified Sign-In & Enhanced Least-Privilege Design"
+description: A more secure, streamlined way to access vBox — with permissions aligned to your role.
 sidebar:
   order: 1
   badge:
@@ -8,7 +8,11 @@ sidebar:
     variant: tip
 ---
 
-We are rolling out an update to the vBox sign-in experience. This change improves security by reducing the permissions required to use vBox and introduces a redesigned sign-in page.
+We are rolling out an update to the vBox sign-in experience in the coming days. This update enhances our least-privilege design by aligning the permissions each user is asked to grant with the role they actually perform. It also introduces a redesigned sign-in page.
+
+:::tip[No disruption to your workflow]
+Your existing configurations, assessments, and data collection settings are not affected. You will simply sign in as usual and may see a one-time consent prompt — that's it.
+:::
 
 ## What Is Changing
 
@@ -18,11 +22,11 @@ You will notice a refreshed sign-in screen when you next log in to vBox. You can
 
 ![New vBox sign-in page](../../../assets/images/auth/sign-in-screen.png)
 
-### Simplified Consent for All Users
+### Simplified Consent
 
-Previously, every user who signed in to vBox for the first time was asked to accept a broad application consent that included read-only access to your Azure infrastructure — regardless of whether your role required it. This meant users who only needed to view dashboards and reports were granting more permissions than necessary.
+Previously, the first-time sign-in consent was the same for everyone and included Azure infrastructure access — even for users whose roles only required dashboards and reports. With this update, we are aligning the sign-in consent with what each role actually needs.
 
-With this update, the first-time consent has been reduced to the absolute minimum: vBox will only request permission to read your basic account information (name, email, and organization). No Azure infrastructure access is requested at sign-in.
+Now, the first-time consent only requests your **basic account information** (name, email, and organization). That is it — no Azure infrastructure access is included at sign-in.
 
 ![Simplified consent dialog](../../../assets/images/auth/sing-in-consent.png)
 
@@ -30,15 +34,13 @@ With this update, the first-time consent has been reduced to the absolute minimu
 
 | | Before | After |
 |---|--------|-------|
-| **First sign-in consent** | Broad consent including Azure infrastructure read access for all users | Lightweight consent for basic profile information only |
+| **Consent scope** | Same broad consent for all users, regardless of role | Permissions aligned with each user's role |
 | **Azure access** | Granted to every user at sign-in, even if not needed | Granted only to Contributors when they perform Azure operations |
-| **Permissions scope** | Same permissions regardless of role | Permissions match your actual role and responsibilities |
+| **First sign-in** | Broad consent including Azure infrastructure read access | Lightweight consent for basic profile information only |
 
 ### Additional Consent Only When Needed
 
-Users who need to set up data collection, map Azure subscriptions, or run assessments (Organization Contributors) will be prompted to accept an additional consent at the point they perform that action. This additional consent grants the Azure environment access required for those specific operations.
-
-If your role does not involve these tasks, you will never see this prompt.
+Users who need to set up data collection, map Azure subscriptions, or run assessments (**Organization Contributors**) will be prompted to accept an additional consent at the point they perform that action. This additional consent grants the Azure environment access that is required for those specific operations. If your role does not involve these tasks, you will never see this prompt.
 
 :::tip[Organization Contributors]
 If you run assessments or configure customer environments, you will see an additional authorization prompt the first time you perform one of those actions after the update. This is the On-Behalf-Of (OBO) authorization flow — see [OBO Authentication](/administration/users-and-roles/#obo-authentication-on-behalf-of) for details.
@@ -52,19 +54,9 @@ For most users, nothing changes in your day-to-day workflow. When you next sign 
 2. **Accept the new consent** — you may be asked to accept a new, lightweight consent for basic profile access. Click **Accept**
 3. **Continue using vBox** — everything else works exactly as before
 
-:::note
-The new consent prompt is a one-time event. You will not be asked again on subsequent sign-ins unless permissions change.
-:::
-
 ## Why We Made This Change
 
-This update follows the **principle of least privilege** — users should only be asked for the permissions they actually need. By separating the consent into a basic sign-in consent and an optional Azure access consent, we ensure that:
-
-- **Read-only users** never grant unnecessary infrastructure permissions
-- **Contributors** grant Azure access only when performing operations that require it
-- **Your data** is better protected with tighter, role-appropriate permissions
-
-This is a security improvement that benefits everyone.
+This update implements a **least-privilege design** — a security best practice where each user is only asked for the permissions their role actually requires. By separating the sign-in consent from the optional Azure access consent, we ensure that permissions are always aligned with what you do in vBox. No existing configurations or data collection settings are affected.
 
 ## Questions?
 
