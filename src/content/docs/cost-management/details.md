@@ -2,7 +2,7 @@
 title: Cost Details
 description: Analyze Azure infrastructure costs with historical data, advanced grouping, filtering, and baseline comparison.
 sidebar:
-  order: 2
+  order: 4
 ---
 
 The **Cost Details** feature allows users to analyze Azure infrastructure costs with last-year data. It includes advanced grouping, filtering, and baseline comparison to optimize spending and track trends effectively.

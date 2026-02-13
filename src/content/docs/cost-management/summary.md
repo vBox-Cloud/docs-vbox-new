@@ -2,7 +2,7 @@
 title: Cost Summary
 description: Cost overview with embedded BI dashboards showing projected annual cost, potential savings, and cost breakdown by service.
 sidebar:
-  order: 4
+  order: 2
 ---
 
 The **Cost Summary** page provides a high-level overview of your Azure spending through embedded BI dashboards powered by Metabase.
