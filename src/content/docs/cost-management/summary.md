@@ -9,7 +9,7 @@ The **Cost Summary** page provides a high-level overview of your Azure spending 
 
 ## BI Dashboard View
 
-<!-- TODO: Add screenshot of Metabase BI dashboard -->
+![Cost Summary BI dashboard](../../../assets/images/cost/summary-bi.png)
 
 The Cost Summary page displays cost analytics through embedded Metabase dashboards, providing executive-level insights into Azure spending patterns and optimization opportunities.
 

@@ -140,9 +140,13 @@ If you navigate to a resource you do not have permission to access, vBox display
 - A link to contact support at **help@vboxcloud.com** (pre-filled with your error details)
 - A **Log out** button to switch accounts if needed
 
-<!-- TODO: Add screenshot of Unauthorized page -->
+![Unauthorized page](../../../assets/images/auth/unauthorized-page.png)
 
 ## OBO Authentication (On-Behalf-Of)
+
+:::note[Organization Contributors Only]
+OBO authentication applies only to Organization Contributors (MSP) who run assessments and manage customer environments. Organization Readers do not encounter OBO prompts.
+:::
 
 vBox uses Microsoft Entra ID **On-Behalf-Of (OBO)** authentication for actions that require direct access to your Azure resources.
 
@@ -150,6 +154,7 @@ vBox uses Microsoft Entra ID **On-Behalf-Of (OBO)** authentication for actions t
 
 The OBO authorization modal appears automatically before:
 
+- **Mapping subscriptions** during organization creation or editing
 - **Running** a manual assessment
 - **Deploying** an assessment environment
 - **Starting** an assessment
@@ -161,7 +166,7 @@ The OBO authorization modal appears automatically before:
 3. Sign in and grant consent in the popup window
 4. The popup closes and you are returned to vBox with authorization complete
 
-<!-- TODO: Add screenshot of OBO Authorization modal -->
+![OBO Authorization modal](../../../assets/images/auth/obo-modal.png)
 
 :::tip
 OBO authorization tokens are stored for your session. You typically only need to authorize once per browser session.

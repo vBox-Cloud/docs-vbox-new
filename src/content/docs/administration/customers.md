@@ -59,7 +59,7 @@ The organizations grid includes several powerful features:
 - **Currency Toggle** — Switch between Original currency and USD display
 - **Column Visibility** — Show/hide columns based on your needs
 
-![Organizations grid view](/images/customers-grid.png)
+![Organizations grid view](../../../assets/images/admin/organizations-grid.png)
 
 ## Filters
 
@@ -118,7 +118,7 @@ Configure Azure tenant and subscription associations:
 | **Azure Tenants** | Select one or more Azure tenants associated with this organization |
 | **Subscriptions per Tenant** | Configure which subscriptions within each tenant should be monitored |
 
-![Subscriptions configuration](/images/customers-subscriptions.png)
+![Subscriptions configuration](../../../assets/images/admin/wizard-subscriptions.png)
 
 ### Step 3: User Management
 
@@ -226,7 +226,7 @@ Set up email notifications for various events:
 | **Report Tickets** | Enable ticket creation for scheduled reports |
 | **Weekly Digest** | Configure weekly summary email delivery |
 
-![Notifications configuration](/images/customers-notifications.png)
+![Notifications configuration](../../../assets/images/admin/wizard-notifications.png)
 
 :::note[ITSM Integration]
 Email notifications can be integrated with ITSM systems by configuring appropriate email addresses and prefixes that route to your ticketing system.
@@ -254,7 +254,7 @@ The customer info page (`/organization/:customerId`) displays a read-only overvi
 - **Users** — Organization Readers, Organization Contributors, Organization Owner, and Scheduled Data Collection User
 - **Email Integration** — Notification settings (if configured)
 
-<!-- TODO: Add screenshot of Customer Info page -->
+![Customer Info page](../../../assets/images/admin/customer-info.png)
 
 ## Best Practices
 

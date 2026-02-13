@@ -198,4 +198,4 @@ The following feature flags control Security Recommendations functionality:
 - `SECURITY` - Main security feature flag
 - `TASKS` - Enables task management features
 
-![Security Recommendations Dashboard](/images/security-recommendations-dashboard.png)
+![Security Recommendations page](../../../assets/images/security/recommendations-page.png)

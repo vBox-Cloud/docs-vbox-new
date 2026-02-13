@@ -80,4 +80,4 @@ Security Assessments are useful for:
 - **Compliance Reporting** - Document security improvements over time
 - **Remediation Tracking** - Track progress on security recommendations and improvements
 
-![Security Assessments Dashboard](/images/security-assessments-dashboard.png)
+![Security Assessments grid](../../../assets/images/security/assessments-grid.png)

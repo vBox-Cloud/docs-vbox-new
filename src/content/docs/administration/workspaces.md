@@ -31,7 +31,7 @@ Only Organization Contributors can create, edit, and manage workspaces.
 
 Workspaces are displayed in the sidebar menu, allowing quick navigation between different workspace contexts. The active workspace is highlighted, and you can switch workspaces directly from the navigation panel.
 
-![Workspace sidebar navigation](/images/workspaces-sidebar.png)
+![Workspace sidebar navigation](../../../assets/images/admin/workspaces-sidebar.png)
 
 ## Creating a Workspace
 
@@ -65,7 +65,7 @@ Workspace edits affect all users with access to that workspace. Changes are refl
 
 Each workspace can contain multiple customer organizations. Navigate to `/workspaces/:id/organizations` to view and manage all organizations within a specific workspace.
 
-![Workspace organizations view](/images/workspaces-organizations.png)
+![Workspace organizations view](../../../assets/images/admin/organizations-grid.png)
 
 ## Global Settings
 

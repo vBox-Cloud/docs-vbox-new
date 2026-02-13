@@ -33,7 +33,7 @@ There are several Operations-related recommendations that affect the Observabili
 
 The Observability Score is part of Operations Assessment and will be calculated automatically against your infrastructure when the "Operations Features" setting is turned on at the Customer level.
 
-<!-- TODO: Add screenshot of Operations Features customer setting -->
+![Operations Features customer setting](../../../assets/images/analytics/bi-setting-toggle.png)
 
 ## Where to See It
 
@@ -41,16 +41,16 @@ The Observability Score is part of Operations Assessment and will be calculated 
 
 The first KPI on the top panel shows the current value and the change over the last 30 days for the Observability Score.
 
-<!-- TODO: Add screenshot of Operations Recommendations KPI panel -->
+![Operations Recommendations KPI panel](../../../assets/images/operations/recommendations-kpi.png)
 
 You can filter the list of recommendations by selecting the "Observability Score" scope to see only recommendations that affect the score.
 
 Group recommendations by "Control" to see the **Potential Score Increase** for each Control, which shows how much it will impact the score once completed.
 
-<!-- TODO: Add screenshot of recommendations grouped by Control -->
+![Recommendations grouped by Control](../../../assets/images/operations/recommendations-grouped.png)
 
 ### Main Dashboard
 
 The dashboard contains a line chart that shows historical changes in the Observability Score value over time.
 
-<!-- TODO: Add screenshot of Observability Score dashboard chart -->
+![Observability Score chart](../../../assets/images/operations/observability-chart.png)

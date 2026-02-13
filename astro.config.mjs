@@ -22,16 +22,20 @@ export default defineConfig({
 			editLink: {
 				baseUrl: 'https://github.com/vBox-Cloud/docs-vbox-new/edit/main/',
 			},
-			sidebar: [
-				{
-					label: 'Getting Started',
-					items: [
-						{ label: 'Welcome', slug: 'index' },
-						{ label: 'Prerequisites', slug: 'getting-started/prerequisites' },
-						{ label: 'Onboarding', slug: 'getting-started/onboarding' },
-						{ label: 'Navigation Guide', slug: 'getting-started/navigation' },
-					],
-				},
+		sidebar: [
+			{
+				label: 'Announcements',
+				autogenerate: { directory: 'announcements' },
+			},
+			{
+				label: 'Getting Started',
+				items: [
+					{ label: 'Welcome', slug: 'index' },
+					{ label: 'Prerequisites', slug: 'getting-started/prerequisites' },
+					{ label: 'Onboarding', slug: 'getting-started/onboarding' },
+					{ label: 'Navigation Guide', slug: 'getting-started/navigation' },
+				],
+			},
 				{
 					label: 'Cost Management',
 					autogenerate: { directory: 'cost-management' },
@@ -56,10 +60,10 @@ export default defineConfig({
 					label: 'Integrations',
 					autogenerate: { directory: 'integrations' },
 				},
-				{
-					label: 'Administration',
-					autogenerate: { directory: 'administration' },
-				},
+		{
+			label: 'Administration',
+			autogenerate: { directory: 'administration' },
+		},
 			],
 		}),
 	],

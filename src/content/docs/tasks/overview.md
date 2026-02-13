@@ -32,7 +32,7 @@ The task list supports two view modes that can be toggled:
 
 Your preferred view mode is automatically saved in localStorage and persists across sessions.
 
-<!-- TODO: Add screenshot -->
+![Tasks table view](../../../assets/images/tasks/table-view.png)
 
 ### Table Columns
 
@@ -51,7 +51,7 @@ When using Table View, the following columns are displayed:
 | **Updated By** | Auto | Last user to update the task with avatar and date |
 | **Actions** | Auto | Three-dot menu with available actions |
 
-<!-- TODO: Add screenshot -->
+![Tasks list view](../../../assets/images/tasks/list-view.png)
 
 ### Filters
 
@@ -210,7 +210,7 @@ Export all filtered tasks to an Excel file with the following columns:
 - To-Do Items #
 - To-Do Items Completed
 
-<!-- TODO: Add screenshot -->
+![Task creation form](../../../assets/images/tasks/create-task.png)
 
 ## Task Form Fields
 
@@ -227,7 +227,7 @@ When creating or editing a task, the following fields are available:
 | **Description** | No | Rich text description using CKEditor with formatting options |
 | **To-Do List** | No | Checklist items for recommendation-based tasks |
 
-<!-- TODO: Add screenshot -->
+![Task detail modal](../../../assets/images/tasks/task-modal.png)
 
 ## Task-Recommendation Relationship
 
@@ -277,4 +277,4 @@ When the Tasks module is unavailable, the upsell banner highlights the following
 - ✅ **Receive notifications** — Stay informed about task updates and assignments
 - ✅ **Search & filter tasks** — Quickly find tasks using powerful search and filter options
 
-<!-- TODO: Add screenshot -->
+![Task age badges](../../../assets/images/tasks/age-badges.png)

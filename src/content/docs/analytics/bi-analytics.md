@@ -70,7 +70,7 @@ The `dashboardType` parameter corresponds to the dashboard type IDs listed in th
 **Route:** `/dashboard`  
 **Dashboard Type:** `main`
 
-<!-- TODO: Add screenshot of Main Dashboard BI view -->
+![Main Dashboard BI view](../../../assets/images/dashboard/main-bi.png)
 
 The Main Dashboard provides an overview of key metrics and analytics for your infrastructure.
 
@@ -88,7 +88,7 @@ The Main Dashboard provides an overview of key metrics and analytics for your in
 **Route:** `/cost/summary`  
 **Dashboard Type:** `costsummary`
 
-<!-- TODO: Add screenshot of Cost Summary BI view -->
+![Cost Summary BI view](../../../assets/images/cost/summary-bi.png)
 
 The Cost Summary Dashboard focuses on cost analysis, optimization opportunities, and budget tracking.
 
@@ -106,7 +106,7 @@ The Cost Summary Dashboard focuses on cost analysis, optimization opportunities,
 **Route:** `/security/summary`  
 **Dashboard Type:** `securitysummary`
 
-<!-- TODO: Add screenshot of Security Summary BI view -->
+![Security Summary BI view](../../../assets/images/security/summary-bi.png)
 
 :::note
 Requires both `BI_ANALYTICS` and `SECURITY` feature flags to be enabled.
@@ -126,7 +126,7 @@ The Security Summary Dashboard provides comprehensive security metrics and compl
 **Route:** `/operations/summary`  
 **Dashboard Type:** `OperationsSummary`
 
-<!-- TODO: Add screenshot of Operations Summary BI view -->
+![Operations Summary BI view](../../../assets/images/operations/summary-bi.png)
 
 :::note
 Requires both `BI_ANALYTICS` and `OPERATIONS` feature flags to be enabled. This dashboard only supports Metabase view (no deprecated widget view available).
@@ -179,7 +179,7 @@ The Operations Summary dashboard only supports the Metabase embed view—no depr
 
 To enable the BI Analytics feature, turn on the corresponding setting for a Customer in the administration panel.
 
-<!-- TODO: Add screenshot of BI Analytics customer setting -->
+![BI Analytics customer setting](../../../assets/images/analytics/bi-setting-toggle.png)
 
 :::tip
 BI Analytics is enabled by default for all subscription plans. You typically only need to configure this setting if you want to disable the feature for a specific customer.

@@ -19,7 +19,7 @@ https://login.microsoftonline.com/common/adminconsent?client_id=1af8d16a-5882-47
 
 After successful login to your organization, you will see the Application Consent approval window.
 
-<!-- TODO: Add screenshot of Application Consent approval window -->
+![Application Consent approval window](../../../assets/images/integrations/app-consent-window.png)
 
 ### Step 2: Accept the Consent
 

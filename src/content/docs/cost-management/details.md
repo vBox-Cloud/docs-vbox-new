@@ -18,13 +18,13 @@ Once this feature is enabled, vBox ingests cost data for the last 12 months from
 
 ## Cost Details Page
 
-<!-- TODO: Add screenshot of Cost Details page -->
+![Cost Details page](../../../assets/images/cost/details-page.png)
 
 The Cost Details page provides comprehensive cost analysis with baseline comparison, advanced grouping options, and detailed cost breakdowns.
 
 ### Cost KPI Panel
 
-<!-- TODO: Add screenshot of Cost KPI panel -->
+![Cost Details KPI panel](../../../assets/images/cost/details-kpi-panel.png)
 
 The panel at the top of the page displays key performance indicators related to Azure spend for your infrastructure:
 
@@ -37,7 +37,7 @@ The panel at the top of the page displays key performance indicators related to 
 
 ### Date Controls and Cost Type Toggle
 
-<!-- TODO: Add screenshot of date controls -->
+![Date controls and cost type toggle](../../../assets/images/cost/details-date-controls.png)
 
 The page includes comprehensive date selection controls:
 
@@ -60,7 +60,7 @@ Switching between Actual and Amortized cost updates all data on the page, includ
 
 ### Cost Data Grid
 
-<!-- TODO: Add screenshot of Cost data grid -->
+![Cost Details data grid](../../../assets/images/cost/details-grid.png)
 
 The main data grid displays Azure costs grouped by your selected dimension. The grid includes the following columns:
 
@@ -90,7 +90,7 @@ Group by Tags to analyze costs by custom organizational dimensions like departme
 
 ### Data Collection Status
 
-<!-- TODO: Add screenshot of warning banner -->
+![Data collection warning banner](../../../assets/images/cost/details-warning-banner.png)
 
 When data collection is in progress, the page automatically refreshes every 3 minutes to display the latest cost data.
 
@@ -100,7 +100,7 @@ A warning banner appears when data collection is incomplete, indicating that som
 
 ### Export Functionality
 
-<!-- TODO: Add screenshot of export button -->
+![Export button](../../../assets/images/cost/details-page.png)
 
 You can export the cost details data to Excel for further analysis:
 
@@ -116,13 +116,13 @@ Clicking on any row in the grid navigates to the **Group Details** page, which p
 
 ## Group Details Page
 
-<!-- TODO: Add screenshot of Group Details page -->
+![Group Details page](../../../assets/images/cost/details-group.png)
 
 The Group Details page displays cost analysis at the resource level for the group selected on the Cost Details page. This page provides the same powerful analysis tools as the main Cost Details page, but focused on individual resources within the selected group.
 
 ### Cost KPI Panel
 
-<!-- TODO: Add screenshot of Group Details KPI panel -->
+![Group Details KPI panel](../../../assets/images/cost/details-group.png)
 
 The KPI panel shows the same metrics as the Cost Details page, but scoped to the selected group:
 
@@ -135,7 +135,7 @@ The KPI panel shows the same metrics as the Cost Details page, but scoped to the
 
 ### Resource-Level Cost Grid
 
-<!-- TODO: Add screenshot of Group Details data grid -->
+![Group Details data grid](../../../assets/images/cost/details-group.png)
 
 The resource grid displays individual resources and their costs, with the same grouping options available:
 
@@ -157,7 +157,7 @@ The grid columns match the Cost Details page:
 
 ### Resource Profile Drill-Down
 
-<!-- TODO: Add screenshot of Resource Profile -->
+![Resource Profile](../../../assets/images/cost/details-group.png)
 
 From the Group Details page, you can drill down further to view the **Resource Profile** for any individual resource. This provides comprehensive details about the resource's cost history, configuration, and optimization opportunities.
 

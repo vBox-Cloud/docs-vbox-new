@@ -13,13 +13,13 @@ The Cost Recommendations feature requires the [COST_DETAILS](/cost-management/de
 
 ## Page Overview
 
-<!-- TODO: Add screenshot of Cost Recommendations page -->
+![Cost Recommendations page](../../../assets/images/cost/recommendations-page.png)
 
 The Cost Recommendations page displays optimization opportunities with detailed savings calculations, resource-level insights, and actionable tasks.
 
 ### Tabs (MSP Only)
 
-<!-- TODO: Add screenshot of tabs -->
+![Calculated and Advanced tabs](../../../assets/images/cost/recommendations-tabs.png)
 
 For MSP (Managed Service Provider) users, the page includes two tabs:
 
@@ -32,7 +32,7 @@ The tabbed interface is available only for MSP users. Standard users see the Cal
 
 ## Cost Savings Summary Widget
 
-<!-- TODO: Add screenshot of Cost Savings Summary widget -->
+![Cost Savings Summary widget](../../../assets/images/cost/savings-summary-widget.png)
 
 The summary widget at the top of the page provides a high-level overview of potential savings:
 
@@ -55,7 +55,7 @@ Use the Monthly/Annually toggle to understand both short-term and long-term savi
 
 ### AI Summary (Optional)
 
-<!-- TODO: Add screenshot of AI Summary button -->
+![AI Summary button](../../../assets/images/cost/ai-summary-button.png)
 
 If AI features are enabled ([FEATURE_AI](/analytics/ai-features/) and [FEATURE_AI_COST_SUMMARY](/analytics/ai-features/)), an **AI Summary** button appears that generates an intelligent summary of your cost optimization opportunities.
 
@@ -65,7 +65,7 @@ AI Summary requires both `FEATURE_AI` and `FEATURE_AI_COST_SUMMARY` feature flag
 
 ## Recommendations Grid
 
-<!-- TODO: Add screenshot of Recommendations grid -->
+![Recommendations data grid](../../../assets/images/cost/recommendations-grid.png)
 
 The main grid displays all cost optimization recommendations with comprehensive details:
 
@@ -85,7 +85,7 @@ The main grid displays all cost optimization recommendations with comprehensive 
 
 ### Group By Options
 
-<!-- TODO: Add screenshot of Group By dropdown -->
+![Group By dropdown](../../../assets/images/cost/recommendations-groupby.png)
 
 You can group recommendations by different dimensions to analyze patterns:
 
@@ -99,7 +99,7 @@ You can group recommendations by different dimensions to analyze patterns:
 
 ### Actions and Filters
 
-<!-- TODO: Add screenshot of action buttons -->
+![Action buttons](../../../assets/images/cost/recommendations-actions.png)
 
 The page includes comprehensive action and filtering capabilities:
 
@@ -122,13 +122,13 @@ Use the Mute feature to focus on active recommendations while keeping muted ones
 
 ## Recommendation Details Page
 
-<!-- TODO: Add screenshot of Recommendation Details page -->
+![Recommendation Details page](../../../assets/images/cost/recommendation-detail.png)
 
 Clicking on a recommendation opens the detailed view, which includes:
 
 ### Formula Widget
 
-<!-- TODO: Add screenshot of formula widget -->
+![Formula widget](../../../assets/images/cost/recommendation-detail.png)
 
 Displays the calculation methodology for the savings estimate, showing how the recommendation's potential savings were calculated.
 
@@ -139,7 +139,7 @@ Displays the calculation methodology for the savings estimate, showing how the r
 
 ### Resource Tabs
 
-<!-- TODO: Add screenshot of resource tabs -->
+![Resource tabs](../../../assets/images/cost/recommendation-resource-tabs.png)
 
 The details page organizes affected resources into tabs:
 

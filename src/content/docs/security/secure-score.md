@@ -17,7 +17,7 @@ Secure Score KPI is a measurement of an organization's security posture within t
 4. Data
 5. Devices
 
-<!-- TODO: Add screenshot of Secure Score sub-scores breakdown -->
+![Secure Score breakdown](../../../assets/images/security/secure-score-breakdown.png)
 
 ## How Secure Scores Are Calculated
 
@@ -49,7 +49,7 @@ The total "Secure Score" is an average value between the Infrastructure Score an
 
 **Apps, Identity, Data, Devices** secure scores will be included in the Secure Score after enabling the "Defender XDR Integration" setting for a "Customer".
 
-<!-- TODO: Add screenshot of Customer settings showing Defender XDR toggle -->
+![Defender XDR toggle in customer settings](../../../assets/images/security/defender-xdr-toggle.png)
 
 For "Defender XDR Integration" setup instructions, see [MS Defender XDR Integration](/integrations/defender-xdr/).
 
@@ -59,16 +59,16 @@ For "Defender XDR Integration" setup instructions, see [MS Defender XDR Integrat
 
 There is a Secure Score widget on the Security Summary page that displays the current Secure Score value, the change over the last 30 days, and a sub-score breakdown.
 
-<!-- TODO: Add screenshot of Security Summary Secure Score widget -->
+![Security Summary Secure Score widget](../../../assets/images/security/summary-bi.png)
 
 ### Security Recommendations
 
 The KPI Panel contains the current Secure Score value with a sub-score breakdown.
 
-<!-- TODO: Add screenshot of Security Recommendations KPI Panel -->
+![Security Recommendations KPI panel](../../../assets/images/security/recommendations-kpi.png)
 
 You can filter the list of recommendations by selecting a "Secure Score: X" scope, where X is one of the sub-scores, to see only recommendations that affect that specific score.
 
 The **Potential Score Increase** column shows how much it will impact the score once completed.
 
-<!-- TODO: Add screenshot of Potential Score Increase column -->
+![Potential Score Increase column](../../../assets/images/security/potential-score-column.png)

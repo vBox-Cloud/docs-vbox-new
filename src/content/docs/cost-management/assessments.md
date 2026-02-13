@@ -13,7 +13,7 @@ The **Cost Assessments** page allows MSP users to create and manage cost assessm
 
 ## Assessments Grid
 
-<!-- TODO: Add screenshot of Assessments grid -->
+![Cost Assessments grid](../../../assets/images/cost/assessments-grid.png)
 
 The main grid displays all cost assessments with the following columns:
 
@@ -30,8 +30,6 @@ The main grid displays all cost assessments with the following columns:
 
 ### Auto-Refresh
 
-<!-- TODO: Add screenshot of auto-refresh indicator -->
-
 The assessments grid automatically refreshes every 10 seconds to display the latest status updates, ensuring you always see current assessment progress and results.
 
 :::tip
@@ -40,7 +38,7 @@ The auto-refresh ensures you don't need to manually refresh the page to see asse
 
 ## Assessment Profile Page
 
-<!-- TODO: Add screenshot of Assessment Profile page -->
+![Assessment Profile page](../../../assets/images/cost/assessment-profile.png)
 
 Clicking on an assessment opens its detailed profile page, which provides comprehensive information and management capabilities.
 
@@ -54,7 +52,7 @@ The profile page displays:
 
 ### Assessment Actions
 
-<!-- TODO: Add screenshot of action buttons -->
+![Assessment action buttons](../../../assets/images/cost/assessment-actions.png)
 
 The profile page provides a comprehensive set of actions for managing assessments:
 
@@ -75,7 +73,7 @@ Deleting an assessment permanently removes it and all associated data. Ensure yo
 
 ## Create Assessment Modal
 
-<!-- TODO: Add screenshot of Create Assessment modal -->
+![Create Assessment modal](../../../assets/images/cost/assessment-create-modal.png)
 
 To create a new cost assessment:
 

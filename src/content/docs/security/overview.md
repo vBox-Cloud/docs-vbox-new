@@ -62,4 +62,4 @@ vBox Security integrates with:
 3. Check your [Secure Score](/security/secure-score/) breakdown to understand which areas need attention
 4. For MSP users, use [Security Assessments](/security/assessments/) to create structured security evaluations
 
-![Security Overview Dashboard](/images/security-overview-dashboard.png)
+![Security Overview](../../../assets/images/security/summary-bi.png)

@@ -25,5 +25,5 @@ The following recommendations were inverted so that each finding (check) inside 
 This allows for more granular vulnerability issue addressing and transparent vBox task management.
 
 :::note
-For the full list (~2,000) of newly added recommendations, see the [Vulnerability-Findings-Recommendations.xlsx](https://github.com/VIAcode/vBox/blob/main/Docs/Security/Vulnerability-Findings-Recommendations.xlsx) reference file.
+For the full list (~2,000) of newly added recommendations, see the [Vulnerability-Findings-Recommendations.xlsx](https://github.com/vBox-Cloud/docs-vbox-new/blob/main/Docs/Security/Vulnerability-Findings-Recommendations.xlsx) reference file.
 :::
