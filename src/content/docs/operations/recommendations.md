@@ -7,7 +7,11 @@ sidebar:
 
 The Operations Recommendations page provides a comprehensive list of operational improvement actions for your Azure environment, featuring four key performance indicators (KPIs) and powerful filtering and grouping capabilities.
 
+![Operations Recommendations page](../../../assets/images/operations/recommendations-page.png)
+
 ## Key Performance Indicators (KPIs)
+
+![Operations Recommendations KPI panel](../../../assets/images/operations/recommendations-kpi.png)
 
 The Operations Recommendations page displays four primary KPIs at the top:
 
@@ -60,6 +64,8 @@ Group recommendations to analyze patterns and prioritize work:
 | **Resource Group** | Always | Group by resource group |
 | **Resource Type** | Always | Group by Azure resource type |
 | **No Grouping** | Always | Default view without grouping |
+
+![Recommendations grouped by Control](../../../assets/images/operations/recommendations-grouped.png)
 
 :::tip
 Group recommendations by "Control" when Scope is set to "Observability Score" to see which control groups will give you the highest Observability Score increase when fully completed.

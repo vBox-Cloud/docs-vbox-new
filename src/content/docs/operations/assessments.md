@@ -2,7 +2,7 @@
 title: Operations Assessments
 description: Operations assessment management for MSP users.
 sidebar:
-  order: 5
+  order: 4
 ---
 
 :::note[MSP Feature]
@@ -25,6 +25,8 @@ Operations assessments support two types of assessment results:
 vBox integrates with Azure Governance Visualizer (AzGovViz) to import policy, RBAC, and management group insights into your operations assessments.
 
 ### Consent Banner
+
+![AzGovViz consent banner](../../../assets/images/operations/azgovviz-consent.png)
 
 When AzGovViz is enabled for your organization, a consent banner appears on the Operations page with two important warnings:
 

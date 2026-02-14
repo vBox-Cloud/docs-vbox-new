@@ -2,7 +2,7 @@
 title: Secure Score
 description: Measure and improve your organization's security posture with actionable recommendations.
 sidebar:
-  order: 2
+  order: 5
 ---
 
 ## What is Secure Score?

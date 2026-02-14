@@ -7,6 +7,8 @@ sidebar:
 
 vBox Security helps organizations surface security exposures and align remediation actions with best practices. It leverages Microsoft Defender for Cloud and Microsoft Defender XDR to provide comprehensive security insights.
 
+![Security Overview](../../../assets/images/security/summary-bi.png)
+
 ## Key Capabilities
 
 - **Secure Score Tracking** — Monitor your organization's security posture with a numerical score and sub-scores across Infrastructure, Apps, Identity, Data, and Devices
@@ -61,5 +63,3 @@ vBox Security integrates with:
 2. Review [Security Recommendations](/security/recommendations/) to identify actionable improvements
 3. Check your [Secure Score](/security/secure-score/) breakdown to understand which areas need attention
 4. For MSP users, use [Security Assessments](/security/assessments/) to create structured security evaluations
-
-![Security Overview](../../../assets/images/security/summary-bi.png)

@@ -2,7 +2,7 @@
 title: Observability Score
 description: Track your monitoring maturity based on vBox best practices.
 sidebar:
-  order: 2
+  order: 5
 ---
 
 ## What is Observability Score?
@@ -33,7 +33,7 @@ There are several Operations-related recommendations that affect the Observabili
 
 The Observability Score is part of Operations Assessment and will be calculated automatically against your infrastructure when the "Operations Features" setting is turned on at the Customer level.
 
-![Operations Features customer setting](../../../assets/images/analytics/bi-setting-toggle.png)
+![Operations Features customer setting](../../../assets/images/operations/ops-features-toggle.png)
 
 ## Where to See It
 

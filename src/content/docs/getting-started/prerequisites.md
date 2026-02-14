@@ -10,7 +10,7 @@ Before getting started with vBox, ensure you have the following:
 ## Account Requirements
 
 - A **Microsoft account** (work or personal) — vBox uses Microsoft Entra ID for authentication
-- Access granted by your organization's vBox administrator, or a free trial from [vbox-cloud.com](https://www.vbox-cloud.com/)
+- Access granted by your organization's vBox administrator, or a free trial from [vboxcloud.com](https://www.vboxcloud.com/)
 
 ## Supported Browsers
 

@@ -2,12 +2,14 @@
 title: Operations Summary
 description: Operations overview with embedded BI dashboards for operational health monitoring.
 sidebar:
-  order: 4
+  order: 2
 ---
 
 The Operations Summary page provides a high-level overview of your operational health through embedded BI dashboards powered by Metabase.
 
-## Planned Dashboard Charts
+![Operations Summary BI dashboard](../../../assets/images/operations/summary-bi.png)
+
+## Dashboard Charts
 
 - **Observability Score KPI** with 30-day change
 - **Observability Score trend chart** — Historical score over time

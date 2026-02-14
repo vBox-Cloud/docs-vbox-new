@@ -2,7 +2,7 @@
 title: Security Assessments
 description: Security assessment management for MSP users.
 sidebar:
-  order: 6
+  order: 4
 ---
 
 :::note[MSP Feature]
@@ -12,6 +12,8 @@ Security Assessments are available only for Organization Contributors (MSP).
 The Security Assessments page allows Organization Contributors to create and manage security assessments for their customers, providing structured evaluation and reporting of security posture improvements.
 
 ## Assessments Grid
+
+![Security Assessments grid](../../../assets/images/security/assessments-grid.png)
 
 The main assessments grid displays all available security assessments with the following columns:
 
@@ -79,5 +81,3 @@ Security Assessments are useful for:
 - **Periodic Reviews** - Generate regular security posture evaluations
 - **Compliance Reporting** - Document security improvements over time
 - **Remediation Tracking** - Track progress on security recommendations and improvements
-
-![Security Assessments grid](../../../assets/images/security/assessments-grid.png)

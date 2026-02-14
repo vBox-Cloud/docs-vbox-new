@@ -2,10 +2,12 @@
 title: Security Summary
 description: Security overview with embedded BI dashboards showing Secure Score, benchmarks, and resource health.
 sidebar:
-  order: 5
+  order: 2
 ---
 
 The Security Summary page provides a high-level overview of your organization's security posture through embedded BI dashboards powered by Metabase.
+
+![Security Summary BI dashboard](../../../assets/images/security/summary-bi.png)
 
 ## Dashboard Charts
 

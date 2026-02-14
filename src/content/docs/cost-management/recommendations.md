@@ -17,17 +17,17 @@ The Cost Recommendations feature requires the [COST_DETAILS](/cost-management/de
 
 The Cost Recommendations page displays optimization opportunities with detailed savings calculations, resource-level insights, and actionable tasks.
 
-### Tabs (MSP Only)
+### Tabs 
 
 ![Calculated and Advanced tabs](../../../assets/images/cost/recommendations-tabs.png)
 
-For MSP (Managed Service Provider) users, the page includes two tabs:
+The page includes two tabs:
 
-- **Calculated** — Recommendations generated automatically by vBox's cost analysis engine
-- **Advanced** — Additional recommendations and optimization strategies
+- **Calculated** — Recommendations generated automatically by vBox's cost analysis engine. Available to all users.
+- **Advanced** — Additional recommendations and optimization strategies.
 
-:::note[MSP Feature]
-The tabbed interface is available only for MSP users. Standard users see the Calculated recommendations directly.
+:::note[Contributor Feature]
+The **Advanced** tab is available only for Organization Contributors (MSP). Organization Readers see only the Calculated tab.
 :::
 
 ## Cost Savings Summary Widget
@@ -128,11 +128,15 @@ Clicking on a recommendation opens the detailed view, which includes:
 
 ### Formula Widget
 
-![Formula widget](../../../assets/images/cost/recommendation-detail.png)
+![Formula widget](../../../assets/images/cost/recommendation-detail-formula.png)
 
 Displays the calculation methodology for the savings estimate, showing how the recommendation's potential savings were calculated.
 
 ### Description and Strategy
+
+![Recommendation description](../../../assets/images/cost/recommendation-detail-desc.png)
+
+Collapsable panel displays some additional helpfull information about recommendation's implementation 
 
 - **Description** — Detailed explanation of the optimization opportunity
 - **Strategy** — Recommended approach to achieve the savings

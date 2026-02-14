@@ -2,7 +2,7 @@
 title: Vulnerabilities and Secrets Recommendations
 description: Granular vulnerability management powered by Microsoft Defender for Cloud.
 sidebar:
-  order: 3
+  order: 6
 ---
 
 ## Vulnerabilities Recommendations

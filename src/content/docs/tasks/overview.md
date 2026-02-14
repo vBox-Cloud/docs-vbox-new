@@ -134,6 +134,8 @@ Tasks are categorized into pillars that align with different aspects of cloud op
 
 ## Task Age Indicators
 
+![Task age badges](../../../assets/images/tasks/age-badges.png)
+
 Tasks display age badges based on how long they have been active (not completed or canceled):
 
 | Age Range | Badge | Description |
@@ -194,6 +196,8 @@ Deleting a task is permanent and cannot be reversed. Ensure you have a backup or
 
 Click the **"Add New Task"** button to create a new task. This opens the task creation form.
 
+![Task creation form](../../../assets/images/tasks/task-create.png)
+
 #### Export to Excel
 
 Export all filtered tasks to an Excel file with the following columns:
@@ -210,7 +214,6 @@ Export all filtered tasks to an Excel file with the following columns:
 - To-Do Items #
 - To-Do Items Completed
 
-![Task creation form](../../../assets/images/tasks/create-task.png)
 
 ## Task Form Fields
 
@@ -228,6 +231,7 @@ When creating or editing a task, the following fields are available:
 | **To-Do List** | No | Checklist items for recommendation-based tasks |
 
 ![Task detail modal](../../../assets/images/tasks/task-modal.png)
+
 
 ## Task-Recommendation Relationship
 
@@ -277,4 +281,4 @@ When the Tasks module is unavailable, the upsell banner highlights the following
 - ✅ **Receive notifications** — Stay informed about task updates and assignments
 - ✅ **Search & filter tasks** — Quickly find tasks using powerful search and filter options
 
-![Task age badges](../../../assets/images/tasks/age-badges.png)
+

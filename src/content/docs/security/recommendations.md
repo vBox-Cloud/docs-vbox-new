@@ -2,12 +2,16 @@
 title: Security Recommendations
 description: Actionable security recommendations with compliance controls and potential score impact.
 sidebar:
-  order: 4
+  order: 3
 ---
 
 The Security Recommendations page provides a comprehensive list of security improvement actions for your Azure environment, sourced from Microsoft Defender for Cloud and Microsoft Defender XDR.
 
+![Security Recommendations page](../../../assets/images/security/recommendations-page.png)
+
 ## Security Indicators Panel
+
+![Security Indicators KPI panel](../../../assets/images/security/recommendations-kpi.png)
 
 At the top of the page, a Security Indicators Panel displays key security metrics:
 
@@ -19,6 +23,8 @@ At the top of the page, a Security Indicators Panel displays key security metric
 | **Active Recommendations** | Count of active recommendations affecting your Secure Score |
 
 ## Secure Score Breakdown
+
+![Secure Score breakdown](../../../assets/images/security/secure-score-breakdown.png)
 
 The page provides a detailed breakdown view of your Secure Score across five categories:
 
@@ -59,6 +65,8 @@ The main recommendations grid displays comprehensive information for each securi
 | **Compliance Control IDs** | Associated compliance control identifiers (e.g., CIS Controls) |
 | **Potential Score Increase** | Estimated Secure Score points gained upon remediation |
 | **Tasks** | Number of associated tasks |
+
+![Potential Score Increase column](../../../assets/images/security/recommendations-grid.png)
 
 ## Scope Filters
 
@@ -131,6 +139,8 @@ Import Recommendations and Download Questionnaire features are available only fo
 
 Clicking on a recommendation name opens a detailed profile page with the following sections:
 
+![Recommendation profile page](../../../assets/images/security/recommendation-detail.png)
+
 ### Header
 - Recommendation name
 - Status badge (Completed/Failed/Not Applicable)
@@ -197,5 +207,3 @@ The following feature flags control Security Recommendations functionality:
 - `CAN_VIEW_SECURITY_INVENTORY` - Controls access to security inventory views
 - `SECURITY` - Main security feature flag
 - `TASKS` - Enables task management features
-
-![Security Recommendations page](../../../assets/images/security/recommendations-page.png)

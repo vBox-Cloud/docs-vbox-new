@@ -100,7 +100,7 @@ A warning banner appears when data collection is incomplete, indicating that som
 
 ### Export Functionality
 
-![Export button](../../../assets/images/cost/details-page.png)
+![Export button](../../../assets/images/cost/details-export.png)
 
 You can export the cost details data to Excel for further analysis:
 
@@ -122,7 +122,7 @@ The Group Details page displays cost analysis at the resource level for the grou
 
 ### Cost KPI Panel
 
-![Group Details KPI panel](../../../assets/images/cost/details-group.png)
+![Group Details KPI panel](../../../assets/images/cost/details-group-kpi.png)
 
 The KPI panel shows the same metrics as the Cost Details page, but scoped to the selected group:
 
@@ -135,7 +135,7 @@ The KPI panel shows the same metrics as the Cost Details page, but scoped to the
 
 ### Resource-Level Cost Grid
 
-![Group Details data grid](../../../assets/images/cost/details-group.png)
+![Group Details data grid](../../../assets/images/cost/details-group-grid.png)
 
 The resource grid displays individual resources and their costs, with the same grouping options available:
 
@@ -157,7 +157,7 @@ The grid columns match the Cost Details page:
 
 ### Resource Profile Drill-Down
 
-![Resource Profile](../../../assets/images/cost/details-group.png)
+![Resource Profile](../../../assets/images/cost/details-resource-profile.png)
 
 From the Group Details page, you can drill down further to view the **Resource Profile** for any individual resource. This provides comprehensive details about the resource's cost history, configuration, and optimization opportunities.
 
