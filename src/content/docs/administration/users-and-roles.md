@@ -166,7 +166,13 @@ The OBO authorization modal appears automatically before:
 3. Sign in and grant consent in the popup window
 4. The popup closes and you are returned to vBox with authorization complete
 
+Autorization popup:
 ![OBO Authorization modal](../../../assets/images/auth/obo-modal.png)
+
+
+Application Consent popup:
+![OBO Authorization modal](../../../assets/images/auth/obo-consent.png)
+
 
 :::tip
 OBO authorization tokens are stored for your session. You typically only need to authorize once per browser session.

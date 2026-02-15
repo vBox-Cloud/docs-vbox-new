@@ -122,6 +122,8 @@ Configure Azure tenant and subscription associations:
 
 ### Step 3: User Management
 
+![User management step](../../../assets/images/admin/wizard-users.png)
+
 Assign users and roles for the organization. The form has four sections:
 
 #### Organization Readers
@@ -169,6 +171,8 @@ The Scheduled Data Collection User is required and must be an Organization Contr
 :::
 
 ### Step 4: Subscription Plan
+
+![Subscription plan step](../../../assets/images/admin/wizard-plan.png)
 
 Configure the subscription plan and feature toggles:
 

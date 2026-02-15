@@ -177,7 +177,7 @@ The Operations Summary dashboard only supports the Metabase embed view—no depr
 
 ## How to Enable BI Analytics
 
-To enable the BI Analytics feature, turn on the corresponding setting for a Customer in the administration panel.
+To enable the BI Analytics feature, turn on the corresponding setting for a Customer in the Subscription Plan selection panel.
 
 ![BI Analytics customer setting](../../../assets/images/analytics/bi-setting-toggle.png)
 

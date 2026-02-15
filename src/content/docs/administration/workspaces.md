@@ -69,7 +69,13 @@ Each workspace can contain multiple customer organizations. Navigate to `/worksp
 
 ## Global Settings
 
-Organization Contributors can access the Global Settings dialog from the application header. It includes two sections:
+Organization Contributors can access the Global Settings dialog from the application header:
+
+![Global settings button](../../../assets/images/admin/globalsettings-button.png)
+
+It includes two sections:
+
+![Global settings modal](../../../assets/images/admin/globalsettings-modal.png)
 
 ### Azure Authorization
 
